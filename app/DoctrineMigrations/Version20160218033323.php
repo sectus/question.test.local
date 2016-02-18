@@ -21,6 +21,7 @@ class Version20160218033323 extends AbstractMigration
         $this->addSql('CREATE TABLE question (id INT AUTO_INCREMENT NOT NULL, question_category_id INT DEFAULT NULL, name VARCHAR(255) NOT NULL, INDEX question_category_id (question_category_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE question_category (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('ALTER TABLE question ADD CONSTRAINT FK_B6F7494EF142426F FOREIGN KEY (question_category_id) REFERENCES question_category (id)');
+        $this->addSql("INSERT INTO `question.test.local`.`question_category` (`id`, `name`) VALUES (NULL, 'category1'), (NULL, 'category2');");
     }
 
     /**
