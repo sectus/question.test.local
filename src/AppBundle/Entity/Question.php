@@ -39,6 +39,10 @@ class Question
     private $questionCategory;
 
 
+    public function __construct() 
+    {
+        $this->questionCategory = new QuestionCategory();
+    }
 
     /**
      * Set name
